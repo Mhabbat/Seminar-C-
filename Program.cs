@@ -1,54 +1,74 @@
-﻿// Семинар 1.
-// Задача 1.Напишите программу,которая на вход принимает два числа и проверяет,является
+﻿// Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую цифру этого числа.
 
 /*
-  Console.Write("Input a first number: ");
+int CutNumber(номер ввода)
+{
+ int sot = число / 100;
+ int ed = число % 10;
+ int результат = sot * 10 + ed;
+ возвращает результат;
+}
+int randNumber = new Random().Next(100, 1000);
+Консоль.Строка записи ("Текущее случайное трехзначное число равно " + randNumber);
+int newNumber = CutNumber(randNumber);
+Console.WriteLine("New version of number is " + newNumber);
+*/
+
+// Напишите программу, которая выводит случайное число из отрезка [10, 99] и показывает наибольшую цифру числа.
+/*
+int MaxNumber(int number)
+{
+  int des = number / 10;
+  int ed = number % 10;
+  int max = 0;
+  if (des > ed)
+  {
+    max = des;
+  }
+  else
+  {
+    max = ed;
+  }
+  return max;
+}
+int randNumber = new Random().Next(10, 100);
+Console.WriteLine("Текущее число " + randNumber);
+int newNumber = MaxNumber(randNumber);
+Console.WriteLine("Максимальное число из текущего " + newNumber);
+*/
+// Напишите программу, которая будет принимать на вход два числа и определять, является ли второе число кратным первому.
+
+/*
+bool InfoNumber(int num1, int num2)
+{
+  if (num2 % num1 == 0) return true;
+  else return false;
+} 
+Console.Write("Введите первое число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a second number: ");
+Console.Write("Введите второе число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
-
-int quad2 = num2 * num2;
-
-if(num1 == quad2)
-{
-    Console.WriteLine("Yes!");
-}
-else
-{
-      Console.WriteLine("No");
-}
-/*
- 
-
-// Задача 2. 
-/*
-Console.Write("Input a number: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-int current = -number;
-
-while(current <= number)
-{
-    Console.Write(current + " ");
-    current = current + 1;   // current++;
-}
+Console.WriteLine(InfoNumber(num1, num2));
 */
-/*
-37145 / 10 = 3714
-37145 / 100 = 371
-37145 / 1000 = 37
-37145 / 10000 = 3
-37145 / 100000 = 0
+// Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
 
-37145 % 10 = 5
-37145 % 100 = 45
-37145 % 1000 = 145
-37145 % 10000 = 7145
+/*Четырехзначный  номер bool(int  num1, int  num2)
+{
+  если (num1 == num2 * num2 || num2 == num1 * num1) возвращает  true;
+  ложный  возврат  еще;
+}
 
-56473 -> 64
-14359 -> 35
-*/
+Консоль.Write("Введите первое число: ");
+Преобразовать = num1  int.ToInt32(консоль.Строка чтения());
+Консоль.Write("Введите второе число: ");
+Преобразовать = num2  int.ToInt32(консоль.Строка чтения());
 
 
-
-
+если (четырехзначное число(num1, num2))
+{
+  Консоль.WriteLine("Одно из чисел является квадратом другого");
+}
+ещё
+{
+  Консоль.WriteLine("Ни одно число не является квадратом друг друга");
+} */
