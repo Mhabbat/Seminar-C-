@@ -1,74 +1,50 @@
-﻿// Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую цифру этого числа.
-
-/*
-int CutNumber(номер ввода)
+﻿/* Напишите программу,которая принимает на вход кординаты точки( x и y),причем x y выдает номер четверти плоскости,
+который находится это точка.
+void GetDiapazone(int quadrant)
 {
- int sot = число / 100;
- int ed = число % 10;
- int результат = sot * 10 + ed;
- возвращает результат;
+    if(quadrant == 1) Console.WriteLine("x > 0 and y > 0");
+    else if(quadrant == 2) Console.WriteLine("x < 0 and > 0");
+    else if(quadrant == 3) Console.WriteLine("x<0 and y<0");
+    else if(quadrant == 4) Console.WriteLine("x > 0 and y < 0");
+    else Console.WriteLine ("Wrong input");
 }
-int randNumber = new Random().Next(100, 1000);
-Консоль.Строка записи ("Текущее случайное трехзначное число равно " + randNumber);
-int newNumber = CutNumber(randNumber);
-Console.WriteLine("New version of number is " + newNumber);
+Console.Write ("Input a number of quadrant:");
+int quadNum = Convert.ToInt32(Console.ReadLine());
+
+GetDiapazone(quadNum);*/
+/* Задача 2 Напишите программу,которая принимает на вход число (N) и выдает квадраты число от 1 до N.
+void Quadrant (int n)
+{
+    int count =1;
+    Console.WriteLine("квадраты чисел:");
+    while(count < n+1)
+    {
+        Console.Write(count*count +" ");
+        count++;
+    }
+
+}
+Console.WriteLine("Введите число N");
+int n = Convert.ToInt32(Console.ReadLine());
+Quadrant(n);
 */
 
-// Напишите программу, которая выводит случайное число из отрезка [10, 99] и показывает наибольшую цифру числа.
-/*
-int MaxNumber(int number)
+
+/* Напишите программу,которая принимает на вход кординаты двух точек и находит расстояние между ними в 2D прострпнстве.
+int GetQuadrant( int x, int y)
 {
-  int des = number / 10;
-  int ed = number % 10;
-  int max = 0;
-  if (des > ed)
-  {
-    max = des;
-  }
-  else
-  {
-    max = ed;
-  }
-  return max;
+    int quadrant=-1;
+   if(x>0 && y>0) quadrant = 1;
+   if(x<0 && x>0) quadrant = 2;
+   if(x<0 && y<0) quadrant = 3;
+   if(x>0 && y<0) quadrant = 4;
+return quadrant;
 }
-int randNumber = new Random().Next(10, 100);
-Console.WriteLine("Текущее число " + randNumber);
-int newNumber = MaxNumber(randNumber);
-Console.WriteLine("Максимальное число из текущего " + newNumber);
+Console.WriteLine("Введите кординаты точек: x & y");
+int x = Convert.ToInt32(Console.ReadLine());
+int y = Convert.ToInt32(Console.ReadLine());
+
+if(GetQuadrant(x,y) == -1) Console.WriteLine("Некорректный ввод");
+else Console.WriteLine("Номер четверти"+ GetQuadrant(x,y));
 */
-// Напишите программу, которая будет принимать на вход два числа и определять, является ли второе число кратным первому.
 
-/*
-bool InfoNumber(int num1, int num2)
-{
-  if (num2 % num1 == 0) return true;
-  else return false;
-} 
-Console.Write("Введите первое число: ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(InfoNumber(num1, num2));
-*/
-// Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
-
-/*Четырехзначный  номер bool(int  num1, int  num2)
-{
-  если (num1 == num2 * num2 || num2 == num1 * num1) возвращает  true;
-  ложный  возврат  еще;
-}
-
-Консоль.Write("Введите первое число: ");
-Преобразовать = num1  int.ToInt32(консоль.Строка чтения());
-Консоль.Write("Введите второе число: ");
-Преобразовать = num2  int.ToInt32(консоль.Строка чтения());
-
-
-если (четырехзначное число(num1, num2))
-{
-  Консоль.WriteLine("Одно из чисел является квадратом другого");
-}
-ещё
-{
-  Консоль.WriteLine("Ни одно число не является квадратом друг друга");
-} */
