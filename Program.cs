@@ -1,135 +1,181 @@
-﻿// Необходимо написать программу,которые перевернет одномерный массив.
-/*
-
-int[]CreateRandomArray(int size,int minValue,int maxValue)
-{
-    int[] array = new int [size];
-    for(int i = 0; i < size; i++)
-      array[i] = new Random().Next(minValue,maxValue + 1);
-
-      return array;
-} 
-
- 
-void ShowArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-    Console.Write(array[i] + " ");
-  
-Console.WriteLine();
-    }
-}
-
-
-void ReverseArray(int[] array)
-{
-    for(int i = 0, j = array.Length - 1; i < j; i++,j--)
-    {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-
-    }
-}
-Console.Write("Input a length of array: ");
-int length = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a min possible value: ");
-int min = Convert.ToInt32(Console.ReadLine()); 
-Console.Write("Input a max possible value: ");
-int max = Convert.ToInt32(Console.ReadLine());
-    
-int [] newArray = CreateRandomArray(length, min, max);
-ShowArray(newArray);
-ReverseArray(newArray);
-ShowArray(newArray);  */
-
-// Необходимо написать программу которые на вход принимает три числа и проверяет,может ли существовать триугольник со сторонами такой длины.
-// Подсказка
-// Сумма двух строна всегда больше третей стороны.
+﻿// Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
 
 /*
-bool Treeangle(int a,int b,int c)
+int[,] CreateRandom2dArray()
 {
-    if (a+b > c && b+c > a && c+a > b)
-    return true;
-    else
-    return false;
-}
-Console.WriteLine("Сторона 1: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Сторона 2: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Сторона 3: ");
-int c = Convert.ToInt32(Console.ReadLine());
-bool result = Treeangle(a,b,c);
-Console.WriteLine(result);   */
+  Console.Write("Input a number of rows: ");
+  int rows = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a number of columns: ");
+  int columns = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue = Convert.ToInt32(Console.ReadLine());
 
-// Необходимо не используй рекурсию вывести первое n чисел Fibonacci первое два число Fibonacci это a и b.
+  int[,] array = new int[rows, columns];
 
-/*int [] RandomArray(int a,int b,int size)
-{
-    int[] array = new int [size];
-    array[0] = a;
-    array[1] = b;
-    for(int i =2; i < size; i++)
-        array[i] = array[i-2] + array[i-1];
-        return array;
-}
- 
-void ShowArray(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
+  for (int i = 0; i < rows; i++)
+  {
+    for (int j = 0; j < columns; j++)
     {
-    Console.Write(array[i] + " ");
+      array[i, j] = new Random().Next(minValue, maxValue + 1);
     }
-  
-          
-}         
-Console.WriteLine("Первое число: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Второе число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Размер ряда Fibonacci: ");
-int size = Convert.ToInt32(Console.ReadLine());
-
-int[] result = RandomArray(a,b,size);
-ShowArray(result);
-*/
-
-// Необходимо написать программу,которые будет создавать копию из одного массива с поьощью по элементного копирование.
-/*
-int[] CreateRandomArray(int size, int minValue, int maxValue) {
-  int[] array = new int[size];
-
-  for (int i = 0; i < size; i++) {
-    array[i] = new Random().Next(minValue, maxValue + 1);
   }
   return array;
 }
 
-void ShowArray(int[] array) {
-  for (int i = 0; i < array.Length; i++) {
-    Console.Write(array[i] + " ");
+void Show2dArray(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+      Console.Write(array[i, j] + " ");
+    Console.WriteLine();
   }
   Console.WriteLine();
 }
 
-int[] CopyArray (int[] array, int size)
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+*/
+
+// Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: Aij = i+j. Выведите полученный массив на экран.
+
+/*
+int[,] Create2dArray()
 {
-  int[] newArray = new int[size];
-  for (int i = 0; i < array.Length; i++)
-    newArray[i] = array[i];
-  return newArray;
+  Console.Write("Input a number of rows: ");
+  int rows = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a number of columns: ");
+  int columns = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue = Convert.ToInt32(Console.ReadLine());
+
+  int[,] array = new int[rows, columns];
+
+  for (int i = 0; i < rows; i++)
+  {
+    for (int j = 0; j < columns; j++)
+    {
+      array[i, j] = i + j;
+    }
+  }
+  return array;
 }
 
-Console.Write("Input a length of array: ");
-int length = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a min possible value: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a max possible value: ");
-int max = Convert.ToInt32(Console.ReadLine());
+void Show2dArray(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+      Console.Write(array[i, j] + " ");
+    Console.WriteLine();
+  }
+  Console.WriteLine();
+}
 
-int[] newArray = CreateRandomArray(length, min, max);
-ShowArray(newArray);
-ShowArray(CopyArray(newArray, length)); */
+int[,] myArray = Create2dArray();
+Show2dArray(myArray);
+*/
+
+// Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
+
+/*
+int[,] CreateRandom2dArray()
+{
+  Console.Write("Input a number of rows: ");
+  int rows = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a number of columns: ");
+  int columns = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue = Convert.ToInt32(Console.ReadLine());
+
+  int[,] array = new int[rows, columns];
+
+  for (int i = 0; i < rows; i++)
+  {
+    for (int j = 0; j < columns; j++)
+      array[i, j] = new Random().Next(minValue, maxValue + 1);
+  }
+  return array;
+}
+
+void Show2dArray(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+      Console.Write(array[i, j] + " ");
+    Console.WriteLine();
+  }
+  Console.WriteLine();
+}
+
+int[,] IsEvenIndex(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i += 2)
+  {
+    for (int j = 0; j < array.GetLength(1); j += 2)
+      array[i, j] = array[i, j] * array[i, j];
+  }
+  return array;
+}
+
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+int[,] result = IsEvenIndex(myArray);
+Show2dArray(result);
+*/
+
+// Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+
+int[,] CreateRandom2dArray()
+{
+  Console.Write("Input a number of rows: ");
+  int rows = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a number of columns: ");
+  int columns = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue = Convert.ToInt32(Console.ReadLine());
+
+  int[,] array = new int[rows, columns];
+
+  for (int i = 0; i < rows; i++)
+  {
+    for (int j = 0; j < columns; j++)
+      array[i, j] = new Random().Next(minValue, maxValue + 1);
+  }
+  return array;
+}
+
+void Show2dArray(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+      Console.Write(array[i, j] + " ");
+    Console.WriteLine();
+  }
+  Console.WriteLine();
+}
+
+int SumElements(int[,] array)
+{
+  int result = 0;
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    result += array[i, i];
+  }
+  return result;
+}
+
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+int sum = SumElements(myArray);
+Console.WriteLine(sum);
