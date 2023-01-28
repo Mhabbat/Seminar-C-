@@ -1,50 +1,67 @@
-﻿/* Напишите программу,которая принимает на вход кординаты точки( x и y),причем x y выдает номер четверти плоскости,
-который находится это точка.
-void GetDiapazone(int quadrant)
-{
-    if(quadrant == 1) Console.WriteLine("x > 0 and y > 0");
-    else if(quadrant == 2) Console.WriteLine("x < 0 and > 0");
-    else if(quadrant == 3) Console.WriteLine("x<0 and y<0");
-    else if(quadrant == 4) Console.WriteLine("x > 0 and y < 0");
-    else Console.WriteLine ("Wrong input");
-}
-Console.Write ("Input a number of quadrant:");
-int quadNum = Convert.ToInt32(Console.ReadLine());
+﻿
 
-GetDiapazone(quadNum);*/
-/* Задача 2 Напишите программу,которая принимает на вход число (N) и выдает квадраты число от 1 до N.
-void Quadrant (int n)
+/*   int GetSum(int num)
 {
-    int count =1;
-    Console.WriteLine("квадраты чисел:");
-    while(count < n+1)
+    int sum =0;
+    for(int current = 1; current <= num; current++)
+    sum += current; // sum = sum + current;
+
+    return sum;
+}
+Console.Write("Input a number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+int result = GetSum(a);
+Console.WriteLine(GetSum(a)); 
+*/
+// Напишите программу,которая принимает на вход число и выдает количество цифр в числе.
+/*
+int Numbers (int n)
+{
+    int count = 0;
+    while (n != 0)
     {
-        Console.Write(count*count +" ");
-        count++;
+        n = n/ 10;
+        count += 1;
     }
-
+return count;
 }
-Console.WriteLine("Введите число N");
-int n = Convert.ToInt32(Console.ReadLine());
-Quadrant(n);
+Console.WriteLine(" Input a number:  ");
+int numb = Convert.ToInt32(Console.ReadLine());
+int result = Numbers (numb);
+Console.WriteLine($"{result}");
 */
 
+// Методы массива
+/*
 
-/* Напишите программу,которая принимает на вход кординаты двух точек и находит расстояние между ними в 2D прострпнстве.
-int GetQuadrant( int x, int y)
+int[]CreateRandomArray(int size,int minValue,int maxValue)
 {
-    int quadrant=-1;
-   if(x>0 && y>0) quadrant = 1;
-   if(x<0 && x>0) quadrant = 2;
-   if(x<0 && y<0) quadrant = 3;
-   if(x>0 && y<0) quadrant = 4;
-return quadrant;
+    int[] array = new int [size];
+    for(int i = 0; i < size; i++)
+      array[i] = new Random().Next(minValue,maxValue + 1);
+
+      return array;
 }
-Console.WriteLine("Введите кординаты точек: x & y");
-int x = Convert.ToInt32(Console.ReadLine());
-int y = Convert.ToInt32(Console.ReadLine());
+void ShowArray(int[] array)
 
-if(GetQuadrant(x,y) == -1) Console.WriteLine("Некорректный ввод");
-else Console.WriteLine("Номер четверти"+ GetQuadrant(x,y));
+{
+    for(int i = 0; i < array.Length; i++)
+    Console.Write(array[i] + " ");
+
+Console.WriteLine();
+}
+
+
+Console.Write("Input a number of elements: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input a min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input a max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] newArray = CreateRandomArray(m, min, max);
+ShowArray(newArray);
 */
-
